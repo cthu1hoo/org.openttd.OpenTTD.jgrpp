@@ -1,4 +1,4 @@
-app-id: org.openttd.OpenTTD
+app-id: org.openttd.OpenTTD.jgrpp
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
@@ -100,19 +100,14 @@ modules:
     builddir: true
     post-install:
       - install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/scalable/apps ../media/openttd.svg
-      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.metainfo.xml
+      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.jgrpp.metainfo.xml
+      - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib
     sources:
       - type: archive
-        url: https://cdn.openttd.org/openttd-releases/12.1/openttd-12.1-source.tar.xz
-        sha256: 258bf5b9983010890ba10518b506bc4ab80f7c08ccec59497e9ba55a4aa3e7e3
-        x-checker-data:
-          type: anitya
-          project-id: 8640
-          stable-only: true
-          url-template: https://cdn.openttd.org/openttd-releases/$version/openttd-$version-source.tar.xz
-          is-main-source: true
+        url: https://github.com/JGRennison/OpenTTD-patches/archive/refs/tags/jgrpp-0.46.0.tar.gz
+        sha256: 401335541996b2b4b42013c00a6d163c30645c78608df685b695652c9a1cdc9a
       - type: file
-        path: org.openttd.OpenTTD.metainfo.xml
+        path: org.openttd.OpenTTD.jgrpp.metainfo.xml
 
   - name: openttd-opengfx
     buildsystem: simple
