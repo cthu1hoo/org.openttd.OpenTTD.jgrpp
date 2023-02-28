@@ -1,6 +1,6 @@
 app-id: org.openttd.OpenTTD.jgrpp
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 command: openttd
 rename-icon: openttd
@@ -99,13 +99,13 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     post-install:
-      - install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/scalable/apps ../media/openttd.svg
+      #- install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/256x256/apps/openttd.png ../media/openttd.256.png
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.jgrpp.metainfo.xml
       - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib
     sources:
       - type: archive
-        url: https://github.com/JGRennison/OpenTTD-patches/archive/refs/tags/jgrpp-0.46.0.tar.gz
-        sha256: 401335541996b2b4b42013c00a6d163c30645c78608df685b695652c9a1cdc9a
+        url: https://github.com/JGRennison/OpenTTD-patches/archive/refs/tags/jgrpp-0.51.1.tar.gz
+        sha256: 92f47c8c7edde9416e140056ef5b9f589d513582cace72ad4ce01ed9df0581b8
       - type: file
         path: org.openttd.OpenTTD.jgrpp.metainfo.xml
 
