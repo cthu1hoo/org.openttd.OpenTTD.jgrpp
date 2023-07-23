@@ -99,13 +99,12 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     post-install:
-      #- install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/256x256/apps/openttd.png ../media/openttd.256.png
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../org.openttd.OpenTTD.jgrpp.metainfo.xml
       - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib
     sources:
       - type: archive
-        url: https://github.com/JGRennison/OpenTTD-patches/archive/refs/tags/jgrpp-0.51.1.tar.gz
-        sha256: 92f47c8c7edde9416e140056ef5b9f589d513582cace72ad4ce01ed9df0581b8
+        url: https://github.com/JGRennison/OpenTTD-patches/archive/refs/tags/jgrpp-0.54.4.tar.gz
+        sha256: 91431b0404fd500a0902777e2016ba8d4fd16d67446cc3be48f26ed07ee521b8
       - type: file
         path: org.openttd.OpenTTD.jgrpp.metainfo.xml
 
