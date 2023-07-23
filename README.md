@@ -7,3 +7,9 @@ Upstream: https://github.com/JGRennison/OpenTTD-patches/releases
 ```
 flatpak-builder build --force-clean org.openttd.OpenTTD.jgrpp.yaml
 ```
+
+Push to local repo
+
+```
+flatpak-builder --repo=/var/www/html/repo --force-clean build org.openttd.OpenTTD.jgrpp.yaml
+```
