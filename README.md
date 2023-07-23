@@ -1,4 +1,6 @@
-# OpenTTD-jgpp flatpak build
+# OpenTTD-jgrpp flatpak build
+
+Upstream: https://github.com/JGRennison/OpenTTD-patches/releases
 
 ## How to build
 
